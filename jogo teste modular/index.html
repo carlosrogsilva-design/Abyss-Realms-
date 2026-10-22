@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abyss Realms v128 — Interface e Legibilidade</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="stage" id="stage">
+  <div class="hdr">
+    <div class="chip pl"><div class="pav">🗡</div><div><b class="d">Comandante</b><small id="hDepth">Prof. 1</small></div></div>
+    <div class="chips"><span class="chip gold" id="hGold">🪙 0</span><span class="chip dia" id="hDia">💎 0</span></div>
+    <div class="hdr-actions"><button class="btn sm" data-act="saveGame" title="Salvar jogo">💾 Salvar</button><button class="btn sm sec" data-act="menuToMenu" title="Voltar ao menu">⌂ Menu</button></div>
+  </div>
+  <div class="screens">
+    <section class="scr" id="sc-abyss">
+      <div class="arena" id="arena">
+        <div class="floor25"></div>
+        <div class="party" id="party"></div>
+        <div class="tgt" id="tgt"><div class="tn d" id="tName">—</div><div class="tb" id="tBar"><i></i></div><div class="ts" id="tSt"></div></div>
+        <div class="next-phase" id="nextPhase" style="display:none">PRÓXIMA FASE COMEÇA EM<b>5 SEGUNDOS</b></div>
+        <div class="dep" id="dep"></div>
+        <div class="stg"><div class="phase-plate" id="phasePlate" data-k="normal"><span class="pl-l" id="phaseLbl">FASE</span><b class="pl-n d" id="phaseNum">1</b><span class="pl-s" id="phaseSub">0/5</span></div><button class="btn sm" data-act="stages">🗺 Fases</button><button class="btn sm pri" id="frontBtn" data-act="pickDepth" data-n="1" style="display:none">⏫ Fronteira</button></div>
+        <div id="units"></div><div id="floats"></div>
+        <div class="abot">
+          <div class="feed" id="feed"></div>
+          <div class="sk"><div id="skills" class="sk"></div>
+            <div class="ctl"><button class="btn" id="pauseBtn" data-act="pauseCombat">⏸ PAUSAR</button><button class="btn" id="autoBtn" data-act="autoToggle">MANUAL</button><button class="btn" data-act="speed" id="spd">Normal</button></div></div>
+        </div>
+      </div>
+    </section>
+    <section class="scr" id="sc-camp"><div class="pad" id="campBody"></div></section>
+    <section class="scr" id="sc-heroes"><div class="pad" id="heroBody"></div></section>
+    <section class="scr" id="sc-pets"><div class="pad" id="petEvoBody"></div></section>
+    <section class="scr" id="sc-weapons"><div class="pad" id="weaponEvoBody"></div></section>
+  </div>
+  <nav class="nav">
+    <button class="nb" data-act="nav" data-s="camp"><i>🏰</i>Camp</button>
+    <button class="nb" data-act="nav" data-s="abyss"><i>🌀</i>Abyss</button>
+    <button class="nb" data-act="nav" data-s="heroes"><i>🗡</i>Heróis</button>
+    <button class="nb" data-act="nav" data-s="pets"><i>🐾</i>Pets</button>
+    <button class="nb" data-act="nav" data-s="weapons"><i>⚒</i>Armas</button>
+  </nav>
+  <div id="toasts"></div>
+  <div class="ov" id="ov"><div class="fxl" id="fxLayer"></div><div class="ovb" id="ovb"></div></div>
+</div>
+
+<button id="fullscreenToggle" type="button" aria-label="Ativar tela cheia" title="Tela cheia" aria-pressed="false">⛶</button>
+
+<script src="js/dados-fases.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
